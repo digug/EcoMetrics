@@ -4,12 +4,13 @@ import "dotenv/config";
 import express, { NextFunction, Request, Response } from "express";
 import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
+import portfolioRoutes from "./routes/portfolio";
 
 // import connectDB from "./db/conn";
 // import postRoutes from "./routes/postRoutes";
 
 // Port
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // URI Configuration
 dotenv.config();
@@ -35,7 +36,7 @@ app.get("/", (req: express.Request, res: express.Response) => {
 });
 
 /* Routes */
-// app.use("/api", postRoutes);
+app.use("/portfolio", portfolioRoutes);
 
 app.use((req, res, next) => {
   next(createHttpError(404, "Endpoint not found"));
