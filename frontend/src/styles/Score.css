@@ -1,0 +1,16 @@
+.score-bar {
+    width: 100%; 
+  }
+  
+  .score-bar.yellow .MuiLinearProgress-barColorPrimary {
+    background-color: red;
+  }
+  
+  .score-bar.orange .MuiLinearProgress-barColorPrimary {
+    background-color: yellow;
+  }
+  
+  .score-bar.green .MuiLinearProgress-barColorPrimary {
+    background-color: green;
+  }
+  
