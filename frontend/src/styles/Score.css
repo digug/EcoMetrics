@@ -1,16 +1,24 @@
+/* Score.css */
 .score-bar {
-    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
   }
   
-  .score-bar.yellow .MuiLinearProgress-barColorPrimary {
-    background-color: red;
+  .title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 5%; 
   }
   
-  .score-bar.orange .MuiLinearProgress-barColorPrimary {
-    background-color: yellow;
+  .score {
+    margin-top: 5%;
   }
   
-  .score-bar.green .MuiLinearProgress-barColorPrimary {
-    background-color: green;
+  .progress {
+    margin-top: 5%;
+    width: 50%; 
   }
   

@@ -1,6 +1,7 @@
 // Score.tsx
 import React from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
+import '../styles/Score.css'
 
 interface ScoreBarProps {
   score: number;
@@ -26,7 +27,15 @@ const ScoreBar: React.FC<ScoreBarProps> = ({ score }) => {
 
   return (
     <div className="score-bar">
-      <LinearProgress      
+      <p className="title">
+        Portfolio Sustainability Score 
+      </p>
+      <h1 className="score">
+        {score}
+      </h1>
+      
+      <LinearProgress   
+        className="progress"   
         color={isBelow50 ? 'error' : (isBelow75 ? 'warning' : 'success')}
         variant="determinate"
         value={progress}
