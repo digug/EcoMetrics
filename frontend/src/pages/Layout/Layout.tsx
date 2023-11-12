@@ -19,14 +19,10 @@ const Layout = () => {
                     </Typography>
                     <Stack direction='row' spacing={5}>
                         <Button onClick={() => {navigate("/")}} color='inherit'> Home</Button>
-                        <Button color='inherit'> About</Button>
-                        <Button onClick={() => {navigate("/evaluate")}} color='inherit'> Evaluate My Portfolio </Button>
+                        <Button onClick={() => {navigate("/about")}} color='inherit'> About</Button>
+                        <Button onClick={() => {navigate("/evaluate")}} className='evaluate button'> Evaluate My Portfolio </Button>
                     </Stack>
                     
-                    {/* <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/evaluate">Evaluate Your Portfolio</Link> */}
-            
                 </Toolbar>
                 </AppBar>
             <Outlet/>
