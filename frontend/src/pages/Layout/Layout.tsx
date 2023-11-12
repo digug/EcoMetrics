@@ -1,6 +1,7 @@
 import { Link, Outlet, useNavigate} from 'react-router-dom';
 import { AppBar, Button, Container, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import UploadIcon from '@mui/icons-material/Upload';
+import logo from '../../assets/PECOM-logos_white.png';
 
 const Layout = () => {
     const navigate = useNavigate()
@@ -8,13 +9,14 @@ const Layout = () => {
         <>
             <AppBar style={{flexGrow: 1, backgroundColor: "rgba(51, 48, 48,0.9)", backdropFilter: "blur(3px)"}} position='fixed'>
                 <Toolbar style={{opacity: "100%"}}>
-                    <IconButton size='large' color='inherit' edge='start'>
-                        <UploadIcon/>
-                    </IconButton>
-                    <Typography variant='h6' component='div' sx={{ flexGrow: 1}}> 
-                        Man U
+
+                    <img src={logo} width={75} height={75}/>
+                   
+                    
+                    <Typography  variant='h6' component='h1'  fontWeight={"bold"} sx={{ flexGrow: 1}}> 
+                        Portfolio Econometrics
                     </Typography>
-                    <Stack direction='row' spacing={2}>
+                    <Stack direction='row' spacing={5}>
                         <Button color='inherit'> Home</Button>
                         <Button color='inherit'> About</Button>
                         <Button onClick={() => {navigate("/evaluate")}} color='inherit'> Evaluate My Portfolio </Button>
