@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate} from 'react-router-dom';
 import { AppBar, Button, Container, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import UploadIcon from '@mui/icons-material/Upload';
 import logo from '../../assets/PECOM-logos_white.png';
+import { Box } from '@material-ui/core';
 
 const Layout = () => {
     const navigate = useNavigate()
@@ -10,11 +11,11 @@ const Layout = () => {
             <AppBar style={{flexGrow: 1, backgroundColor: "rgba(51, 48, 48,0.9)", backdropFilter: "blur(3px)"}} position='fixed'>
                 <Toolbar style={{opacity: "100%"}}>
 
-                    <img src={logo} width={75} height={75}/>
+                    <img src={logo} width={75} height={75} style={{marginTop: "10px"}}/>
                    
                     
-                    <Typography  variant='h6' component='h1'  fontWeight={"bold"} sx={{ flexGrow: 1}}> 
-                        Portfolio Econometrics
+                    <Typography  variant='h5' component='div' align='left'  fontWeight={900} sx={{ flexGrow: 1, }}> 
+                        <Box fontWeight='bold'>Portfolio Econometrics</Box>
                     </Typography>
                     <Stack direction='row' spacing={5}>
                         <Button color='inherit'> Home</Button>
