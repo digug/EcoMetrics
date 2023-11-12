@@ -48,7 +48,7 @@ function UploadPortfolio () {
                     />
                 </Grid>
                 <Grid item  >
-                    <Button onClick={} variant="contained">Analyze Portfolio</Button>
+                    <Button variant="contained">Analyze Portfolio</Button>
                 </Grid>
                
 

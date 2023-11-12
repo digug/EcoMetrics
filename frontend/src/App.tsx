@@ -1,18 +1,22 @@
 import { useState } from 'react'
+import {Routes, Route} from 'react-router-dom'
 import ScorePage from '../src/pages/ScorePage.tsx';
 import './App.css'
-
+import Layout from './pages/Layout/Layout'
+import UploadPortfolio from './pages/UploadPortfolio' 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="card">
-        <ScorePage/>
-      </div>
-    </>
-    
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<UploadPortfolio/>}/>
+        {/*       
+        <Route index element={<Home/>}/>  
+        <Route path="/about" element={<About/>}/>
+        */}
+        <Route path="/evaluate" element={<ScorePage/>}/> 
+
+      </Route>
+    </Routes>
   )
 }
-
-export default App
+export default App;
