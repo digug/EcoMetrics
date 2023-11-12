@@ -4,43 +4,33 @@ import { Router, Request, Response } from "express";
 import fs from "fs";
 
 
-// Extend the Request type to include the file property from multer
-interface CustomRequest extends Request {
-  file: Express.Multer.File;
-}
-
-
 // Endpoint to parse CSV
 export const parseCSV = async (req: Request, res: Response): Promise<void> => {
-  {
-    const file = req.file;
-    if (file) {
-      const results: Array<Array<string>> = [];
-  
-      // Using csv-parse to parse the CSV file
-      const parser = parse({ delimiter: "," });
-  
-      fs.createReadStream(file.path)
-        .pipe(parser)
-        .on("data", (data) => {
-          // Process each row of the CSV here
-          results.push(data);
-        })
-        .on("end", () => {
-          // Now 'results' contains the parsed data from the CSV file
-          console.log(results);
-  
-          // Perform your additional processing on 'results' here
-          const companyNames: Array<string> = [];
-          results.forEach((element, i) => {
-            if (i !== 0) {
-              companyNames.push(element[0]);
-            }
-          });
-          console.log(companyNames);
-  
-          // Optionally, you can remove the temporary file after processing
-          // Remove the temporary file after processing
+  const file = req.file;
+  if (file) {
+    const results: Array<Array<string>> = [];
+
+    // Using csv-parse to parse the CSV file
+    const parser = parse({ delimiter: "," });
+
+    fs.createReadStream(file.path)
+      .pipe(parser)
+      .on("data", (data) => {
+        // Process each row of the CSV here
+        results.push(data);
+      })
+      .on("end", () => {
+        // Calculate the spent on stock and percentage
+        const stockData = results.slice(1); // Skipping the header row
+        const spentOnStockArray = stockData.map(row => parseFloat(row[10]) * parseFloat(row[11]));
+        const totalSpent = spentOnStockArray.reduce((acc, curr) => acc + curr, 0);
+        const percentageSpentArray = spentOnStockArray.map(spent => (spent / totalSpent) * 100);
+        const responseArray = stockData.map((row, index) => [row[0], percentageSpentArray[index]]);
+
+        // Send the response
+        res.status(200).json(responseArray);
+
+        // Remove the temporary file after processing
         fs.unlink(file.path, (err) => {
           if (err) {
             console.error("Error deleting file:", err);
@@ -48,14 +38,11 @@ export const parseCSV = async (req: Request, res: Response): Promise<void> => {
             console.log("File deleted successfully");
           }
         });
-  
-          res.send("CSV file processed successfully");
-        });
-    } else {
-      res.status(400).send("No file uploaded");
-    }
+      });
+  } else {
+    res.status(400).send("No file uploaded");
   }
-}
+};
 
 /**
  * Gets all articles within the last year with their article title and tone
