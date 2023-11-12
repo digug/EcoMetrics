@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import { DropzoneArea } from "material-ui-dropzone";
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import "../styles/UploadPortfolio.css"
+import { Route } from "@mui/icons-material";
 
 function UploadPortfolio () {
     
@@ -16,6 +17,13 @@ function UploadPortfolio () {
                 <h1> Upload Your Portfolio For Evaluation</h1>
                 <Grid item>
                     <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus justo. 
+                    Cras euismod cursus justo, at sodales urna sodales eget. Praesent vestibulum non orci semper 
+                    ultricies. Duis ullamcorper augue eu mauris ultrices tincidunt. Aenean in quam pretium, feugiat 
+                    mauris sed, dictum quam. Pellentesque ut elementum ante. Aliquam dapibus nisi a ligula iaculis, 
+                    ac fermentum nibh mattis. Morbi sed posuere lacus. Vestibulum fermentum pellentesque libero vel 
+                    facilisis. Aenean bibendum arcu sed velit dictum, quis efficitur lacus tempor.
+
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus justo. 
                     Cras euismod cursus justo, at sodales urna sodales eget. Praesent vestibulum non orci semper 
                     ultricies. Duis ullamcorper augue eu mauris ultrices tincidunt. Aenean in quam pretium, feugiat 
@@ -40,7 +48,7 @@ function UploadPortfolio () {
                     />
                 </Grid>
                 <Grid item  >
-                    <Button  variant="contained">Analyze Portfolio</Button>
+                    <Button onClick={} variant="contained">Analyze Portfolio</Button>
                 </Grid>
                
 
