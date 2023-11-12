@@ -1,0 +1,17 @@
+.headings
+{
+    font-weight: bold;
+}
+  
+.table-container {
+    margin-top: 20px; 
+  }
+  
+  .table {
+    min-width: 400px; 
+  }
+  
+  .row {
+    text-align: center;
+  }
+

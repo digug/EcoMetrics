@@ -1,0 +1,27 @@
+score-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh;
+  }
+  
+  .left-panel {
+    background-color: #1e1e1e; 
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .classification
+  {
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  
+  .table-container {
+    overflow-y: auto;
+  }
