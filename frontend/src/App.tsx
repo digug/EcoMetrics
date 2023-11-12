@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import About from "./pages/About.tsx";
-import HomePage from "./pages/Homepage.tsx";
+import About from "./pages/About";
+import HomePage from "./pages/Homepage";
 import Layout from "./pages/Layout/Layout";
-import UploadPortfolio from "./pages/UploadPortfolio.tsx";
+import UploadPortfolio from "./pages/UploadPortfolio";
 
 function App() {
   return (
