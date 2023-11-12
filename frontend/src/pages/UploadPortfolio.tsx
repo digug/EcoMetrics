@@ -58,23 +58,23 @@ function UploadPortfolio() {
               <strong>Components of the Algorithm:</strong>
             </h2>
 
-            <ol>
+            <ul className="no-bullets">
               <li>
-                <strong>Environmental Factors:</strong> Examination of a
+                <strong>🌿 &nbsp; Environmental Factors:</strong> Examination of a
                 company's environmental impact, including its carbon footprint,
-                resource usage, and sustainability efforts. 🌿
+                resource usage, and sustainability efforts. 
               </li>
               <li>
-                <strong>Social Factors:</strong> Evaluation of a company's
+                <strong>👥 &nbsp; Social Factors:</strong> Evaluation of a company's
                 social responsibility, considering aspects such as employee
-                relations, diversity, and community engagement. 👥
+                relations, diversity, and community engagement.
               </li>
               <li>
-                <strong>Governance Factors:</strong> Analysis of a company's
+                <strong>📜 &nbsp; Governance Factors:</strong> Analysis of a company's
                 governance structure, leadership quality, transparency, and
-                adherence to ethical business practices. 📜
+                adherence to ethical business practices.
               </li>
-            </ol>
+            </ul>
           </Grid>
           <Grid item style={{ width: "70%", height: "70%", color: "black" }}>
             <DropzoneAreaBase
