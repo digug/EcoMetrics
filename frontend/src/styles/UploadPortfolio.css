@@ -31,4 +31,6 @@
 .container {
 
     padding: 3%;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 20px;
 }
