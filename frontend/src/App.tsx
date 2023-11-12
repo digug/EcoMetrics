@@ -11,7 +11,6 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/about" element={<About />} />
-
         <Route path="/evaluate" element={<UploadPortfolio />} />
       </Route>
     </Routes>
