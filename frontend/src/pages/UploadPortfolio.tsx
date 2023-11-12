@@ -90,7 +90,7 @@ function UploadPortfolio() {
                   showPreviewsInDropzone={true}
                   filesLimit={1}
                   showFileNames={true}
-                  dropzoneText={"Upload Yahoo finance portfolio..."}
+                  dropzoneText={"Upload your finance portfolio..."}
                 />
 
               </Box>
