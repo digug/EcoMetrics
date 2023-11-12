@@ -22,13 +22,18 @@ portfolioRoutes.post("/", mw.single("file"), (req, res) => {
       })
       .on("end", () => {
         // Now 'results' contains the parsed data from the CSV file
-        console.log(results);
 
         // Perform your additional processing on 'results' here
 
         // Optionally, you can remove the temporary file after processing
         fs.unlinkSync(file.path);
-
+        const companyNames: Array<string> = [];
+        results.forEach((element, i) => {
+          if (i !== 0) {
+            companyNames.push(element[0]);
+          }
+        });
+        console.log(companyNames);
         res.send("CSV file processed successfully");
       });
   } else {
