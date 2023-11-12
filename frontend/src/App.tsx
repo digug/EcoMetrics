@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import ScorePage from '../src/pages/ScorePage.tsx';
 import './App.css'
 import Layout from './pages/Layout/Layout'
-import UploadPortfolio from './pages/UploadPortfolio' 
+import UploadPortfolio from './pages/UploadPortfolio.tsx' 
 function App() {
   return (
     <Routes>
