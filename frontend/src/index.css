@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  background-image: url('./assets/black_material_ui_background_by_ministerkraft_dddraqt-pre.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 a {

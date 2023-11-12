@@ -1,25 +1,22 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import ScoreBar from './pages/Score.tsx';
-import Table from './pages/Table.tsx';
+import {Routes, Route} from 'react-router-dom'
+import ScorePage from '../src/pages/ScorePage.tsx';
 import './App.css'
-
+import Layout from './pages/Layout/Layout'
+import UploadPortfolio from './pages/UploadPortfolio.tsx' 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="card">
-        <ScoreBar score={30}/>
-        <p>
-        </p>
-      </div>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<UploadPortfolio/>}/>
+        {/*       
+        <Route index element={<Home/>}/>  
+        <Route path="/about" element={<About/>}/>
+        */}
+        <Route path="/evaluate" element={<ScorePage/>}/> 
 
-      <Table/>
-    </>
-    
+      </Route>
+    </Routes>
   )
 }
-
-export default App
+export default App;

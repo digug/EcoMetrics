@@ -10,15 +10,15 @@
   .title {
     font-size: 23px;
     font-weight: bold;
-    margin-top: 5%; 
+    margin-top: 0%; 
   }
   
   .score {
-    margin-top: 5%;
+    margin-top: 0%;
   }
   
   .progress {
-    margin-top: 5%;
+    margin-top: 0%;
     width: 50%; 
   }
   

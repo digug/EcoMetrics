@@ -1,0 +1,31 @@
+score-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh;
+  }
+
+  .left-panel {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 5%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .right-panel {
+    background-color: rgba(30, 30, 30, 0.95); 
+    border-radius: 20px;
+    margin: 20px;
+  }
+  
+  .table-container {
+    overflow-y: auto;
+  }
+
+  .classification {
+    margin-right: 10%;
+    margin-left: 10%;
+  }

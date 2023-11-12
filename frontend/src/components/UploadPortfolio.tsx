@@ -13,7 +13,7 @@ function UploadPortfolio () {
     return(
         <div>
             
-            <Grid container direction="column" alignItems="center" justifyContent='center'  spacing={3} >
+            <Grid container direction="column" alignItems="center"  spacing={3} >
                 <h1> Upload Your Portfolio For Evaluation</h1>
                 <Grid item>
                     <p>
@@ -48,7 +48,7 @@ function UploadPortfolio () {
                     />
                 </Grid>
                 <Grid item  >
-                    <Button variant="contained">Analyze Portfolio</Button>
+                    <Button onClick={} variant="contained">Analyze Portfolio</Button>
                 </Grid>
                
 

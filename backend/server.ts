@@ -6,9 +6,6 @@ import createHttpError, { isHttpError } from "http-errors";
 import morgan from "morgan";
 import portfolioRoutes from "./routes/portfolio";
 
-// import connectDB from "./db/conn";
-// import postRoutes from "./routes/postRoutes";
-
 // Port
 const PORT = process.env.PORT || 3000;
 
@@ -54,14 +51,6 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
   res.status(statusCode).json({ error: errorMessage });
 });
 
-// Connect to MongoDB
-// connectDB()
-//   .then(() => {
-//     app.listen(PORT, () => {
-//       console.log(`Server started on port ${PORT}`);
-//     });
-//   })
-//   .catch(console.error);
 
 const server = app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
