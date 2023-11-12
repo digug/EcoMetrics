@@ -16,11 +16,7 @@ function UploadPortfolio () {
             <div className="container">  
                 <Grid container direction="column" alignItems="center" justifyContent='center'  spacing={3} >
                     <Grid item>
-                    <h1><strong>Upload Your Portfolio For Evaluation 📈</strong></h1>
-
-                    <h2><strong>What We Expect in a Yahoo Finance Portfolio:</strong></h2>
-
-                    <p>A Yahoo Finance portfolio typically includes a list of assets you own, accompanied by relevant financial metrics and performance indicators. Ensure that your portfolio file contains detailed information about each holding, such as stock ticker symbols, quantities, purchase prices, and current market values. The more comprehensive the data, the more accurate and insightful our evaluation can be.</p>
+                    <h1><strong>Upload Your Yahoo Finance Portfolio For Evaluation 📈</strong></h1>
 
                     <h2><strong>Algorithmic Evaluation for ESG Score and Rating:</strong></h2>
 

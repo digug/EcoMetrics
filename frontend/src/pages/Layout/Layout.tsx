@@ -18,7 +18,7 @@ const Layout = () => {
                         <Box fontWeight='bold'>Portfolio Econometrics</Box>
                     </Typography>
                     <Stack direction='row' spacing={5}>
-                        <Button color='inherit'> Home</Button>
+                        <Button onClick={() => {navigate("/")}} color='inherit'> Home</Button>
                         <Button color='inherit'> About</Button>
                         <Button onClick={() => {navigate("/evaluate")}} color='inherit'> Evaluate My Portfolio </Button>
                     </Stack>
