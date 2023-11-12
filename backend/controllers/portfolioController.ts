@@ -1,12 +1,11 @@
 import axios from "axios";
 import { parse } from "csv-parse";
-import { Router, Request, Response } from "express";
+import { Request, Response } from "express";
 import fs from "fs";
-
-
 // Endpoint to parse CSV
 export const parseCSV = async (req: Request, res: Response): Promise<void> => {
   const file = req.file;
+
   if (file) {
     const results: Array<Array<string>> = [];
 
@@ -19,16 +18,27 @@ export const parseCSV = async (req: Request, res: Response): Promise<void> => {
         // Process each row of the CSV here
         results.push(data);
       })
-      .on("end", () => {
+      .on("end", async () => {
         // Calculate the spent on stock and percentage
         const stockData = results.slice(1); // Skipping the header row
-        const spentOnStockArray = stockData.map(row => parseFloat(row[10]) * parseFloat(row[11]));
-        const totalSpent = spentOnStockArray.reduce((acc, curr) => acc + curr, 0);
-        const percentageSpentArray = spentOnStockArray.map(spent => (spent / totalSpent) * 100);
-        const responseArray = stockData.map((row, index) => [row[0], percentageSpentArray[index]]);
+        const spentOnStockArray = stockData.map(
+          (row) => parseFloat(row[10]) * parseFloat(row[11])
+        );
+        const totalSpent = spentOnStockArray.reduce(
+          (acc, curr) => acc + curr,
+          0
+        );
+        const percentageSpentArray = spentOnStockArray.map(
+          (spent) => spent / totalSpent
+        );
+
+        const stocks = stockData.map((row, index) => [
+          row[0],
+          percentageSpentArray[index],
+        ]);
 
         // Send the response
-        res.status(200).json(responseArray);
+        res.status(200).json(await evaluatePortfolio(stocks));
 
         // Remove the temporary file after processing
         fs.unlink(file.path, (err) => {
@@ -115,15 +125,31 @@ const calculateAvgTone = (tone_arr: any[]) => {
     tone_arr.reduce((accumulator, currentValue) => {
       return accumulator + currentValue;
     }, 0) / tone_arr.length;
-  console.log(avg);
+  // console.log(avg);
   return avg;
 };
 
-const evaluateCompany = async (company: string) => {
-  const e = await getAverageESGTone(company, environment);
-  const s = await getAverageESGTone(company, social);
-  const g = await getAverageESGTone(company, governance);
-  return [e, s, g];
+const evaluateCompany = async (ticker: string) => {
+  const names: any = {
+    AAPL: "Apple",
+    GOOG: "Google",
+    GM: "General Motors",
+    MSFT: "Microsoft",
+    SU: "Suncor",
+    TSLA: "Tesla",
+    COST: "Costco",
+  };
+  let company = names[ticker];
+  const e = (100 * ((await getAverageESGTone(company, environment)) + 20)) / 40;
+  const s = (100 * ((await getAverageESGTone(company, social)) + 20)) / 40;
+  const g = (100 * ((await getAverageESGTone(company, governance)) + 20)) / 40;
+  return {
+    ticker: ticker,
+    e_score: e,
+    s_score: s,
+    g_score: g,
+    overall_score: (e + s + g) / 3,
+  };
 };
 
 /**
@@ -131,7 +157,15 @@ const evaluateCompany = async (company: string) => {
  * @param percentages
  * @param companies
  */
-export const evaluatePortfolio = (percentages: any[], companies: any[]) => {
-  const evaluation = {};
-  //   companies.forEach();
+const evaluatePortfolio = async (stocks: any[]) => {
+  let portfolio_score = 0;
+  let stock_scores: any[] = [];
+  console.log(stocks);
+
+  for (let stock of stocks) {
+    let company_eval = await evaluateCompany(stock[0]);
+    stock_scores.push(company_eval);
+    portfolio_score += stock[1] * company_eval.overall_score;
+  }
+  return { portfolio_score: portfolio_score, stock_scores: stock_scores };
 };
