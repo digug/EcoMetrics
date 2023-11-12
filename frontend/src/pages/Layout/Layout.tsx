@@ -3,24 +3,25 @@ import { AppBar, Button, Container, IconButton, Stack, Toolbar, Typography } fro
 import UploadIcon from '@mui/icons-material/Upload';
 import logo from '../../assets/PECOM-logos_white.png';
 import { Box } from '@material-ui/core';
+import icon from '../../assets/icon.png'
+import leaf from '../../assets/leaf.svg'
 
 const Layout = () => {
     const navigate = useNavigate()
     return (
         <>
-            <AppBar style={{flexGrow: 1, backgroundColor: "rgba(51, 48, 48,0.9)", backdropFilter: "blur(3px)"}} position='fixed'>
+            <AppBar style={{flexGrow: 1, backgroundColor: "black", backdropFilter: "none", boxShadow: "none", paddingTop: '1rem', paddingBottom: '1rem'}} position='fixed'>
                 <Toolbar style={{opacity: "100%"}}>
 
-                    <img src={logo} width={75} height={75} style={{marginTop: "10px"}}/>
+                    <img onClick={() => {navigate("/")}} src={leaf} width={50} height={50} style={{cursor: 'pointer'}}/>
                    
                     
-                    <Typography  variant='h5' component='div' align='left'  fontWeight={900} sx={{ flexGrow: 1, }}> 
-                        <Box fontWeight='bold'>Portfolio Econometrics</Box>
-                    </Typography>
-                    <Stack direction='row' spacing={5}>
-                        <Button onClick={() => {navigate("/")}} color='inherit'> Home</Button>
-                        <Button onClick={() => {navigate("/about")}} color='inherit'> About</Button>
-                        <Button onClick={() => {navigate("/evaluate")}} className='evaluate button'> Evaluate My Portfolio </Button>
+                    <div style={{textAlign: 'start', flexGrow: 1, fontSize: '1.5rem'}}> 
+                    </div>
+                    <Stack direction='row' spacing={10}>
+                        {/* <button onClick={() => {navigate("/")}} style={{backgroundColor: 'transparent', fontSize: '1rem'}}></button> */}
+                        {/* <button onClick={() => {navigate("/about")}} style ={{backgroundColor: 'transparent'}}> About</button> */}
+                        <button onClick={() => {navigate("/evaluate")}} style = {{borderRadius: '5px', paddingBlock: '0.8', fontSize: '1rem', backgroundColor: '#35AC43'}} className='evaluate button'>Evaluate my Portfolio</button>
                     </Stack>
                     
                 </Toolbar>
