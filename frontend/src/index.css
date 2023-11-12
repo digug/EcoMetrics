@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  background-image: url('/Users/rohitnair/Desktop/CodeTheChange/HackTheChange2023/frontend/src/assets/black_material_ui_background_by_ministerkraft_dddraqt-pre.jpg'); 
+  background-image: url('./assets/black_material_ui_background_by_ministerkraft_dddraqt-pre.jpg'); 
   background-size: cover;
   background-attachment: fixed;
 }

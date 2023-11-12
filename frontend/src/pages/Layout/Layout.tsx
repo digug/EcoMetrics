@@ -17,12 +17,7 @@ const Layout = () => {
                         <Button color='inherit'> Home</Button>
                         <Button color='inherit'> About</Button>
                         <Button onClick={() => {<Navigate to='/evaluate'/>}} color='inherit'> Evaluate My Portfolio </Button>
-                    </Stack>
-                    
-                    {/* <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/evaluate">Evaluate Your Portfolio</Link> */}
-            
+                    </Stack>            
                 </Toolbar>
                 </AppBar>
             <Outlet/>
