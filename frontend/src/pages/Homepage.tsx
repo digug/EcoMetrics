@@ -2,7 +2,6 @@ import React from 'react';
 import demo from '../assets/Screenshot_2023-11-12_at_2.04.25_AM-removebg.png';
 import stockWorld from '../assets/pexels-hatice-baran-17931015.jpg';
 import '../styles/Homepage.css';
-import { Button } from '@mui/material';
 import '@fontsource/open-sans/300-italic.css'
 import { useNavigate } from 'react-router-dom';
 

@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424 !important;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,15 +45,27 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+.dropzone-container {
+  border-radius: 50px !important;
+  min-height: 7em !important;
+  width: 30em !important;
+  background-color: rgba(214, 214, 214, 0.4) !important;
+  border: 2px dashed #cfcfcf !important;
+  margin: 40px 0 20px 0 !important;
+}
+
+.dropzone-paragraph {
+  font-family: "Open Sans" !important;
+}
 
 button {
-  border-radius: 8px;
+  border-radius: 8px !important;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.2em !important;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #35ac43 !important;
   cursor: pointer;
   transition: border-color 0.25s;
 }

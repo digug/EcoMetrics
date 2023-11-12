@@ -1,16 +1,12 @@
-import { Link, Outlet, useNavigate} from 'react-router-dom';
-import { AppBar, Button, Container, IconButton, Stack, Toolbar, Typography } from "@mui/material";
-import UploadIcon from '@mui/icons-material/Upload';
-import logo from '../../assets/PECOM-logos_white.png';
-import { Box } from '@material-ui/core';
-import icon from '../../assets/icon.png'
+import { Outlet, useNavigate} from 'react-router-dom';
+import { AppBar, Stack, Toolbar } from "@mui/material";
 import leaf from '../../assets/leaf.svg'
 
 const Layout = () => {
     const navigate = useNavigate()
     return (
         <>
-            <AppBar style={{flexGrow: 1, backgroundColor: "black", backdropFilter: "none", boxShadow: "none", paddingTop: '1rem', paddingBottom: '1rem'}} position='fixed'>
+            <AppBar style={{flexGrow: 1, backgroundColor: "#242424", backdropFilter: "none", boxShadow: "none", paddingTop: '1rem', paddingBottom: '1rem'}} position='fixed'>
                 <Toolbar style={{opacity: "100%"}}>
 
                     <img onClick={() => {navigate("/")}} src={leaf} width={50} height={50} style={{cursor: 'pointer'}}/>
@@ -28,7 +24,6 @@ const Layout = () => {
                 </AppBar>
             <Outlet/>
         </>
-      
     )
 }
 export default Layout
