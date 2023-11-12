@@ -25,8 +25,14 @@ portfolioRoutes.post("/", mw.single("file"), (req, res) => {
 
         // Perform your additional processing on 'results' here
 
-        // Optionally, you can remove the temporary file after processing
-        fs.unlinkSync(file.path);
+        // Remove the temporary file after processing
+        fs.unlink(file.path, (err) => {
+          if (err) {
+            console.error("Error deleting file:", err);
+          } else {
+            console.log("File deleted successfully");
+          }
+        });
         const companyNames: Array<string> = [];
         results.forEach((element, i) => {
           if (i !== 0) {
