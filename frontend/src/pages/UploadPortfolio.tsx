@@ -5,12 +5,12 @@ import { DropzoneAreaBase } from "material-ui-dropzone";
 import { useState } from "react";
 import "../styles/UploadPortfolio.css";
 import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
+
 const handleSubmit = async (file: File) => {
-  
+  const navigate = useNavigate();
   const formData = new FormData();
   formData.append("file", file);
-  navigate("/score");
+  navigate("/");
   const response = await axios.post(
     "http://localhost:3000/portfolio/upload-csv",
     formData
