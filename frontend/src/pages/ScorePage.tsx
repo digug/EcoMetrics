@@ -2,9 +2,12 @@ import React from 'react';
 import ScoreBar from '../components/Score';
 import Table from '../components/Table';
 import '../styles/ScorePage.css'
-
+import {useLocation} from 'react-router-dom';
 const getScoreMessage = (score: number) => {
-    if (score <= 50) {
+  const location = useLocation()  
+  console.log('payload:', location.state.Payload.portfolio_score)
+  if (score <= 50) {
+
       return (
         <>
           <h2>Your Portfolio Evaluation:</h2>

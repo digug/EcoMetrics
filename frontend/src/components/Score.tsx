@@ -5,7 +5,7 @@ import '../styles/Score.css'
 import { FileObject } from 'material-ui-dropzone';
 
 interface ScoreBarProps {
-  payload: FileObject
+  Payload: FileObject
 }
 
 const ScoreBar: React.FC<ScoreBarProps> = ({ score }) => {
