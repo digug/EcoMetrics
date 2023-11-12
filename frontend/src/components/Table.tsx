@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import '../styles/Table.css';
 
 interface Row {
   name: string;
@@ -44,10 +45,10 @@ export default function CompanyScoreTable() {
         <Table sx={{ minWidth: 650 }} aria-label="company score table">
           <TableHead>
             <TableRow>
-              <TableCell>Company Name</TableCell>
-              <TableCell align="right">Environmental Score</TableCell>
-              <TableCell align="right">Social Score</TableCell>
-              <TableCell align="right">Governance Score</TableCell>
+              <TableCell className="headings">Company Name</TableCell>
+              <TableCell align="right" className="headings">Environmental Score</TableCell>
+              <TableCell align="right" className="headings">Social Score</TableCell>
+              <TableCell align="right" className="headings">Governance Score</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
