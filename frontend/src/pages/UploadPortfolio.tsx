@@ -1,4 +1,12 @@
-import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Grid,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { DropzoneAreaBase } from "material-ui-dropzone";
 import { useState } from "react";
@@ -10,16 +18,19 @@ interface FileObject {
 }
 
 function UploadPortfolio() {
+  const [isLoading, setIsLoading] = useState(false);
   const [fileObjects, setFileObjects] = useState<FileObject[]>([]);
   const navigate = useNavigate();
 
   const handleSubmit = async (file: File) => {
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("file", file);
     const response = await axios.post(
       "http://localhost:3000/portfolio/upload-csv",
       formData
     );
+    setIsLoading(false);
     navigate("/score", { state: { Payload: response.data } });
   };
 
@@ -108,37 +119,44 @@ function UploadPortfolio() {
             <>
               <h1>Upload Your Portfolio For Evaluation</h1>
               {renderInstructions()}
-              <Paper
-                sx={{
-                  padding: "10px",
-                  backgroundColor: "#565656",
-                  color: "white",
-                  margin: "40px 0 20px 0",
-                }}
-                elevation={1}
-              >
-                <Stack direction={"row"} alignItems={"center"} spacing={10}>
-                  <Typography
-                    textAlign={"left"}
-                    fontWeight={"bolder"}
-                    sx={{ flexGrow: 1 }}
+
+              {isLoading ? (
+                <CircularProgress sx={{ margin: "40px" }} color="success" />
+              ) : (
+                <>
+                  <Paper
+                    sx={{
+                      padding: "10px",
+                      backgroundColor: "#565656",
+                      color: "white",
+                      margin: "40px 0 20px 0",
+                    }}
+                    elevation={1}
                   >
-                    Selected File: {fileObjects[0].file.name}
-                  </Typography>
+                    <Stack direction={"row"} alignItems={"center"} spacing={10}>
+                      <Typography
+                        textAlign={"left"}
+                        fontWeight={"bolder"}
+                        sx={{ flexGrow: 1 }}
+                      >
+                        Selected File: {fileObjects[0].file.name}
+                      </Typography>
+                      <Button
+                        onClick={() => setFileObjects([])}
+                        variant="contained"
+                      >
+                        Change File
+                      </Button>
+                    </Stack>
+                  </Paper>
                   <Button
-                    onClick={() => setFileObjects([])}
+                    onClick={() => handleSubmit(fileObjects[0].file)}
                     variant="contained"
                   >
-                    Change File
+                    Analyze Portfolio
                   </Button>
-                </Stack>
-              </Paper>
-              <Button
-                onClick={() => handleSubmit(fileObjects[0].file)}
-                variant="contained"
-              >
-                Analyze Portfolio
-              </Button>
+                </>
+              )}
             </>
           )}
         </Grid>
