@@ -1,8 +1,19 @@
 import { Button, Paper, Typography, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import axios from "axios";
 import { DropzoneAreaBase } from "material-ui-dropzone";
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles/UploadPortfolio.css";
+
+const handleSubmit = async (file: File) => {
+  const formData = new FormData();
+  formData.append("file", file);
+  const response = await axios.post(
+    "http://localhost:3000/portfolio/upload-csv",
+    formData
+  );
+  console.log(response);
+};
 
 function UploadPortfolio() {
   const [fileObjects, setFileObjects] = useState<FileObject[]>([]);
@@ -157,7 +168,7 @@ function UploadPortfolio() {
           </Grid>
           <Grid item>
             <Button
-              onClick={() => console.log(fileObjects[0].file.name)}
+              onClick={() => handleSubmit(fileObjects[0].file)}
               variant="contained"
             >
               Analyze Portfolio
