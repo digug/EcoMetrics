@@ -40,14 +40,14 @@ function UploadPortfolio () {
                     tempus facilisis turpis aliquet vulputate. Nam vitae orci pulvinar, pulvinar metus et, tristique arcu.
                     </p>
                 </Grid>
-                <Grid item style={{width: "70%", height: "80%", fontWeight: "bolder" }} >
-                    <DropzoneArea dropzoneClass="paragraph"
-                        dropzoneText={"Upload yahoo finance portfolio"} 
-                        dropzoneParagraphClass="paragraph"
-                        
+                <Grid item style={{width: "70%", height: "70%", fontWeight: "bolder" }} >
+                    <DropzoneArea 
+                        dropzoneClass="paragraph"
+                        dropzoneText={"Upload Yahoo finance portfolio..."} 
+                        dropzoneParagraphClass="paragraph"                        
                     />
                 </Grid>
-                <Grid item  >
+                <Grid item >
                     <Button variant="contained">Analyze Portfolio</Button>
                 </Grid>
                
