@@ -6,6 +6,7 @@ import multer from "multer";
 const portfolioRoutes = Router();
 const mw = multer({ dest: "uploads/" });
 
+<<<<<<< HEAD
 portfolioRoutes.post("/", mw.single("file"), (req, res) => {
   const file = req.file;
   if (file) {
@@ -46,5 +47,9 @@ portfolioRoutes.post("/", mw.single("file"), (req, res) => {
     res.status(400).send("No file uploaded");
   }
 });
+=======
+// POST request to parse CSV
+portfolioRoutes.post("/upload-csv", mw.single("file"), PortfolioController.parseCSV);
+>>>>>>> 5c3e39ee98611355d3f837900e65e6a2b0acbda3
 
 export default portfolioRoutes;

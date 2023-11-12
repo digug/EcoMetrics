@@ -59,9 +59,20 @@ function UploadPortfolio () {
                 <h1> Upload Your Portfolio For Evaluation</h1>
                 <Grid item>
                     <p>
-                        Provide us with a exported Yahoo finance portfolio and we will 
-                        rate your protfolio on its ESG impact. we also provide ratings for each the companies 
-                        you invest in.
+                    <p>A Yahoo Finance portfolio typically includes a list of assets you own, accompanied by relevant financial metrics and performance indicators. Ensure that your portfolio file contains detailed information about each holding, such as stock ticker symbols, quantities, purchase prices, and current market values. The more comprehensive the data, the more accurate and insightful our evaluation can be.</p>
+
+<h2><strong>Algorithmic Evaluation for ESG Score and Rating:</strong></h2>
+
+<p>Once your portfolio is uploaded, our platform employs a sophisticated algorithm to assess the <strong>Environmental, Social, and Governance (ESG)</strong> performance of each company within your holdings. This algorithm considers a variety of factors to determine the ESG score, providing a holistic view of how well a company aligns with sustainable and responsible business practices.</p>
+
+<h3><strong>Components of the Algorithm:</strong></h3>
+
+<ol>
+  <li><strong>Environmental Factors:</strong> Examination of a company's environmental impact, including its carbon footprint, resource usage, and efforts towards sustainability.</li>
+  <li><strong>Social Factors:</strong> Evaluation of a company's social responsibility, considering aspects such as employee relations, diversity/inclusion, and community engagement.</li>
+  <li><strong>Governance Factors:</strong> Analysis of a company's governance structure, leadership quality, transparency, and adherence to ethical business practices.</li>
+</ol>
+
                     </p>
                 </Grid>
                 
