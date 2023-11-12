@@ -175,15 +175,17 @@ const calculateAvgTone = (tone_arr: any[]) => {
 };
 
 const evaluateCompany = async (ticker: string) => {
-  const names: any = {
-    AAPL: "Apple",
-    GOOG: "Google",
-    GM: "General Motors",
-    MSFT: "Microsoft",
-    SU: "Suncor",
-    TSLA: "Tesla",
-    COST: "Costco",
-  };
+    const names: any = {
+      AAPL: "Apple",
+      GOOG: "Google",
+      GM: "General Motors",
+      MSFT: "Microsoft",
+      'SU.TO': "Suncor",
+      TSLA: "Tesla",
+      COST: "Costco",
+      ADBE: "Adobe",
+      "MC.PA": "Louis Vuitton"
+    };
   let company = names[ticker];
   const e = (100 * ((await getAverageESGTone(company, environment)) + 20)) / 40;
   const s = (100 * ((await getAverageESGTone(company, social)) + 20)) / 40;
