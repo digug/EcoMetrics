@@ -6,8 +6,8 @@ const Layout = () => {
     const navigate = useNavigate()
     return (
         <>
-            <AppBar style={{flexGrow: 1}} position='fixed'>
-                <Toolbar>
+            <AppBar style={{flexGrow: 1, backgroundColor: "rgba(51, 48, 48,0.9)", backdropFilter: "blur(3px)"}} position='fixed'>
+                <Toolbar style={{opacity: "100%"}}>
                     <IconButton size='large' color='inherit' edge='start'>
                         <UploadIcon/>
                     </IconButton>
