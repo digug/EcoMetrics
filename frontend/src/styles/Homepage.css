@@ -1,9 +1,9 @@
 .home-page-container {
-    margin-top: 75px;
-    background-color: rgba(30, 30, 30, 0.95);
+    margin-top: 20%;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
+    flex-grow: 1;
 }
 
 .demo-image {

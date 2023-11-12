@@ -19,7 +19,7 @@ function UploadPortfolio() {
       "http://localhost:3000/portfolio/upload-csv",
       formData
     );
-    navigate("/score");
+    navigate("/score", {state:{Payload:response.data}});
     console.log(response);
   };
 

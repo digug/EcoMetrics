@@ -2,12 +2,15 @@ import React from 'react';
 import ScoreBar from '../components/Score';
 import Table from '../components/Table';
 import '../styles/ScorePage.css'
-
+import {useLocation} from 'react-router-dom';
 const getScoreMessage = (score: number) => {
-    if (score <= 50) {
+ 
+  
+  if (score <= 50) {
+
       return (
         <>
-          <h2>Your Portfolio Evaluation:</h2>
+          <h2>Your Portfolio Evaluation: </h2>
           <p>
             Your current portfolio is categorized as <strong>unsustainable</strong>. After analyzing your Environmental (E), Social (S), and Governance (G) preferences, it appears that your investment portfolio does not fully align with your personal values. This is perfectly fine! Understanding your portfolio score is the initial stride towards making sustainable investment decisions.
           </p>
@@ -45,7 +48,9 @@ const getScoreMessage = (score: number) => {
   
 
 const ScorePage: React.FC = () => {
-    const score = 30;
+    const location = useLocation() 
+    const payload = location.state.Payload;
+    const score = Math.floor( payload.portfolio_score);
     return (
       <div className="score-page">
         <div className="left-panel">
