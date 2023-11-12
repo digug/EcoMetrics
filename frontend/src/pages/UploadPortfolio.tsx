@@ -6,21 +6,22 @@ import { useState } from "react";
 import "../styles/UploadPortfolio.css";
 import { useNavigate } from "react-router-dom";
 
-const handleSubmit = async (file: File) => {
-  const navigate = useNavigate();
-  const formData = new FormData();
-  formData.append("file", file);
-  navigate("/");
-  const response = await axios.post(
-    "http://localhost:3000/portfolio/upload-csv",
-    formData
-  );
-  
-  console.log(response);
-};
+
 
 function UploadPortfolio() {
   const [fileObjects, setFileObjects] = useState<FileObject[]>([]);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (file: File) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    const response = await axios.post(
+      "http://localhost:3000/portfolio/upload-csv",
+      formData
+    );
+    navigate("/score");
+    console.log(response);
+  };
 
   if (fileObjects.length == 0) {
     return (
