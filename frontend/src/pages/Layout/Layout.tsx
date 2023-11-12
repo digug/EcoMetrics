@@ -1,7 +1,7 @@
 import { Link, Outlet, Navigate} from 'react-router-dom';
 import { AppBar, Button, Container, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import UploadIcon from '@mui/icons-material/Upload';
-import  
+
 const Layout = () => {
     return (
         <>

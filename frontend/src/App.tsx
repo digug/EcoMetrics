@@ -3,8 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import ScorePage from '../src/pages/ScorePage.tsx';
 import './App.css'
 import Layout from './pages/Layout/Layout'
-import UploadPortfolio from './pages/UploadPortfolio'
-improt 
+import UploadPortfolio from './pages/UploadPortfolio' 
 function App() {
   return (
     <Routes>
@@ -14,7 +13,7 @@ function App() {
         <Route index element={<Home/>}/>  
         <Route path="/about" element={<About/>}/>
         */}
-        <Route path="/evaluate" element={}/> 
+        <Route path="/evaluate" element={<ScorePage/>}/> 
 
       </Route>
     </Routes>
