@@ -16,7 +16,7 @@ const HomePage = () => {
         </div>
         <div style={{marginTop: '1.2rem'}}>
           <div style={{fontSize:'1.3rem'}}>
-            Ecometrics presents a comprehensive analysis, offering deep insight into the sustainability of your investment portfolio<span style={{color: '#53CA61'}}>.</span>
+            Ecometrics offers deep insight into the sustainability of your portfolio, empowering investors to make more informed and sustainable financial choices<span style={{color: '#53CA61'}}>.</span>
           </div>
         </div>
         <button onClick={() => {navigate("/evaluate")}} style = {{borderRadius: '5px', backgroundColor: '#35AC43', marginTop: '3rem', fontSize: '1.2rem', paddingBlock: '0.8'}}>Get Started</button>
