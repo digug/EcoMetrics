@@ -143,7 +143,7 @@ function UploadPortfolio() {
             <Paper sx={{padding: '10px'}} elevation={1}>
               
               <Stack direction={'row'} alignItems={'center'} spacing={10}>
-                <Typography fontWeight={'bolder'} sx={{flexGrow:1}}>
+                <Typography textAlign={'left'} fontWeight={'bolder'} sx={{flexGrow:1}}>
                   Selected File: {fileObjects[0].file.name}
                 </Typography>
                 <Button 
