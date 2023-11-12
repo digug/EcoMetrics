@@ -1,4 +1,4 @@
-import { Button, Paper, Typography } from "@mui/material";
+import { Button, Paper, Typography, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { DropzoneAreaBase } from "material-ui-dropzone";
 import React, { useState } from "react";
@@ -139,9 +139,20 @@ function UploadPortfolio() {
             `
           </Grid>
 
-          <Grid item style={{ width: "70%", height: "70%", color: "black" }}>
-            <Paper elevation={1}>
-              <Typography>{fileObjects[0].file.name}</Typography>
+          <Grid item style={{ width: "50%", height: "50%", color: "black" }}>
+            <Paper sx={{padding: '10px'}} elevation={1}>
+              
+              <Stack direction={'row'} alignItems={'center'} spacing={10}>
+                <Typography fontWeight={'bolder'} sx={{flexGrow:1}}>
+                  Selected File: {fileObjects[0].file.name}
+                </Typography>
+                <Button 
+                onClick={() => {setFileObjects([])}}
+                variant="outlined">
+                  Change File
+                </Button>
+              </Stack>
+            
             </Paper>
           </Grid>
           <Grid item>

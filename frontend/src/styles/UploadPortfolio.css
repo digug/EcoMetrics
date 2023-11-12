@@ -4,6 +4,10 @@
     color: black;
     
 }
+
+.paperStack {
+    align-content: center;
+}
 .logo {
     height: 6em;
     
