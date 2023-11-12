@@ -1,12 +1,51 @@
 import axios from "axios";
 import { parse } from "csv-parse";
 import { Request, Response } from "express";
-import fs from "fs";
+import fs, { PathLike } from "fs";
+import NodeCache from 'node-cache';
+import sha256 from 'crypto-js/sha256';
+
+const getFileHash = (filePath: PathLike) => {
+  const fileData = fs.readFileSync(filePath);
+  const hashDigest = sha256(fileData.toString());
+
+  return hashDigest.toString();
+};
+
+const getFileKey = (filePath: PathLike) => {
+  const stats = fs.statSync(filePath);
+  const fileHash = getFileHash(filePath);
+  
+  return `${fileHash}-${stats.size}}`;
+};
 // Endpoint to parse CSV
+
+// Initialize the cache with a standard TTL (time to live) of 24 hours (86400 seconds)
+const myCache = new NodeCache({ stdTTL: 86400 });
 export const parseCSV = async (req: Request, res: Response): Promise<void> => {
   const file = req.file;
 
   if (file) {
+    // Try to get data from cache
+    const cacheKey = getFileKey(file.path);
+    const cachedData = myCache.get(cacheKey);
+    if (cachedData) {
+      console.log("Serving data from cache");
+      res.setHeader('X-Cache', 'HIT');
+      res.setHeader('Cache-Control', 'public, max-age=86400'); // 24 hours
+      res.status(200).json(cachedData);
+
+      // Remove the file path
+      fs.unlink(file.path, (err) => {
+        if (err) {
+          console.error("Error deleting file:", err);
+        } else {
+          console.log("File deleted successfully");
+        }
+      });
+      return;
+    }
+
     const results: Array<Array<string>> = [];
 
     // Using csv-parse to parse the CSV file
@@ -36,6 +75,12 @@ export const parseCSV = async (req: Request, res: Response): Promise<void> => {
           row[0],
           percentageSpentArray[index],
         ]);
+
+        // Save the processed data in cache
+        myCache.set(cacheKey, await evaluatePortfolio(stocks));
+
+        console.log("Serving fresh data");
+        res.setHeader('X-Cache', 'MISS');
 
         // Send the response
         res.status(200).json(await evaluatePortfolio(stocks));
