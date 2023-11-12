@@ -2,9 +2,10 @@
 import React from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
 import '../styles/Score.css'
+import { FileObject } from 'material-ui-dropzone';
 
 interface ScoreBarProps {
-  score: number;
+  score: number
 }
 
 const ScoreBar: React.FC<ScoreBarProps> = ({ score }) => {
