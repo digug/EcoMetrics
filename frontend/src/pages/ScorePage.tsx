@@ -58,7 +58,7 @@ const ScorePage: React.FC = () => {
             <ScoreBar score={score} />
           </div>
           <div className="table-container">
-            <Table />
+            <Table payload={payload} />
           </div>
           <p className='classification'>
           {getScoreMessage(score)}       

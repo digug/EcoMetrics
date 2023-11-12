@@ -8,6 +8,11 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../styles/Table.css';
+import { letterSpacing } from '@mui/system';
+
+interface Payload {
+  payload: any
+}
 
 interface Row {
   name: string;
@@ -25,12 +30,7 @@ function createData(
   return { name, environmentalScore, socialScore, governanceScore };
 }
 
-const rows: Row[] = [
-  createData('Company A', 75, 80, 90),
-  createData('Company B', 85, 70, 80),
-  createData('Company C', 90, 85, 75),
-  // Add more rows as needed
-];
+
 
 const theme = createTheme({
   palette: {
@@ -38,7 +38,17 @@ const theme = createTheme({
   },
 });
 
-export default function CompanyScoreTable() {
+export default function CompanyScoreTable({payload}:Payload) {
+ 
+
+  const rows: Row[] = []
+  for(let i = 0; i < payload.stock_scores.length; i++ ){
+    const stocks = payload.stock_scores[i];
+    rows.push(createData(stocks.ticker,Math.round(stocks.e_score),Math.round(stocks.s_score),Math.round(stocks.g_score)));
+
+  }
+
+  console.log(rows)
   return (
     <ThemeProvider theme={theme}>
       <TableContainer component={Paper}>
