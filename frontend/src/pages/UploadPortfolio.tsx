@@ -17,27 +17,20 @@ function UploadPortfolio () {
                 <h1> Upload Your Portfolio For Evaluation</h1>
                 <Grid item>
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus justo. 
-                    Cras euismod cursus justo, at sodales urna sodales eget. Praesent vestibulum non orci semper 
-                    ultricies. Duis ullamcorper augue eu mauris ultrices tincidunt. Aenean in quam pretium, feugiat 
-                    mauris sed, dictum quam. Pellentesque ut elementum ante. Aliquam dapibus nisi a ligula iaculis, 
-                    ac fermentum nibh mattis. Morbi sed posuere lacus. Vestibulum fermentum pellentesque libero vel 
-                    facilisis. Aenean bibendum arcu sed velit dictum, quis efficitur lacus tempor.
+                    <p>A Yahoo Finance portfolio typically includes a list of assets you own, accompanied by relevant financial metrics and performance indicators. Ensure that your portfolio file contains detailed information about each holding, such as stock ticker symbols, quantities, purchase prices, and current market values. The more comprehensive the data, the more accurate and insightful our evaluation can be.</p>
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu tempus justo. 
-                    Cras euismod cursus justo, at sodales urna sodales eget. Praesent vestibulum non orci semper 
-                    ultricies. Duis ullamcorper augue eu mauris ultrices tincidunt. Aenean in quam pretium, feugiat 
-                    mauris sed, dictum quam. Pellentesque ut elementum ante. Aliquam dapibus nisi a ligula iaculis, 
-                    ac fermentum nibh mattis. Morbi sed posuere lacus. Vestibulum fermentum pellentesque libero vel 
-                    facilisis. Aenean bibendum arcu sed velit dictum, quis efficitur lacus tempor.
+<h2><strong>Algorithmic Evaluation for ESG Score and Rating:</strong></h2>
 
-                    Nunc a urna pretium, fringilla lorem a, lobortis tortor. Ut mi nibh, feugiat a nulla sit amet, finibus faucibus nibh. 
-                    Aliquam convallis quam id nulla malesuada, at elementum dui commodo. Nulla nec mauris ante. 
-                    Proin eros nulla, varius vel justo eu, efficitur elementum nulla. Morbi tellus est, 
-                    tempor vitae ligula ac, maximus suscipit diam. Sed semper vitae odio sit amet eleifend. 
-                    Maecenas vel fermentum diam. Donec ullamcorper velit sollicitudin, tristique dolor non, 
-                    venenatis justo. Mauris sed metus id erat convallis vulputate. Vestibulum egestas nisl metus, 
-                    tempus facilisis turpis aliquet vulputate. Nam vitae orci pulvinar, pulvinar metus et, tristique arcu.
+<p>Once your portfolio is uploaded, our platform employs a sophisticated algorithm to assess the <strong>Environmental, Social, and Governance (ESG)</strong> performance of each company within your holdings. This algorithm considers a variety of factors to determine the ESG score, providing a holistic view of how well a company aligns with sustainable and responsible business practices.</p>
+
+<h3><strong>Components of the Algorithm:</strong></h3>
+
+<ol>
+  <li><strong>Environmental Factors:</strong> Examination of a company's environmental impact, including its carbon footprint, resource usage, and efforts towards sustainability.</li>
+  <li><strong>Social Factors:</strong> Evaluation of a company's social responsibility, considering aspects such as employee relations, diversity/inclusion, and community engagement.</li>
+  <li><strong>Governance Factors:</strong> Analysis of a company's governance structure, leadership quality, transparency, and adherence to ethical business practices.</li>
+</ol>
+
                     </p>
                 </Grid>
                 <Grid item style={{width: "70%", height: "70%", fontWeight: "bolder" }} >
